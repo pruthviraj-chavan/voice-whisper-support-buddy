@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
 
-## Project info
+# ISP Voice/Text Customer Support Assistant
 
-**URL**: https://lovable.dev/projects/0f257223-46c5-4f2a-b69d-11bd9ac0455d
+This project demonstrates a voice-enabled customer support assistant for an Internet Service Provider (ISP). It allows users to interact via voice in a browser interface, processes their queries using natural language processing, and provides appropriate responses.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Voice recording interface using Web Speech API
+- Speech-to-text conversion
+- Intent recognition using Wit.ai
+- Response generation based on recognized intents
+- Text-to-speech for assistant responses
+- Fallback handling for unrecognized intents
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0f257223-46c5-4f2a-b69d-11bd9ac0455d) and start prompting.
+- Frontend: React with TypeScript, Tailwind CSS
+- Backend: Python Flask
+- NLP: Wit.ai for intent recognition
+- Voice: Web Speech API (browser-native)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Setup Instructions
 
-**Use your preferred IDE**
+### Frontend Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+4. Open your browser to the URL shown in the console (typically http://localhost:8080)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Backend Setup
 
-Follow these steps:
+1. Make sure you have Python 3.7+ installed
+2. Install the required Python packages:
+   ```
+   pip install flask flask-cors requests
+   ```
+3. Run the Flask server:
+   ```
+   python app.py
+   ```
+4. The server will start on http://localhost:5000
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Usage
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Open the web application in a browser that supports the Web Speech API (Chrome recommended)
+2. Click the microphone button to start speaking
+3. Ask a question or describe an issue (e.g., "My internet is slow", "How do I pay my bill?")
+4. The assistant will process your query and respond with a relevant answer
+5. For unrecognized queries, the assistant will offer to connect you with human support
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Supported Intents
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+The assistant recognizes the following intents:
 
-**Edit a file directly in GitHub**
+- `intent_greeting`: General greetings and welcome messages
+- `intent_bill_payment`: Questions about paying bills
+- `intent_slow_internet`: Issues with slow internet connection
+- `intent_contact_support`: Requests to speak with customer support
+- `intent_unknown`: Fallback for unrecognized queries
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development Notes
 
-**Use GitHub Codespaces**
+- The frontend uses the Web Speech API for voice input and output, which may require HTTPS for deployment
+- The Wit.ai token is included in the backend code for demonstration purposes
+- In a production environment, this token should be stored securely as an environment variable
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Future Enhancements
 
-## What technologies are used for this project?
+- Add Twilio integration for phone-based support
+- Implement more sophisticated dialog management
+- Add user authentication for personalized support
+- Expand the range of recognized intents and responses
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0f257223-46c5-4f2a-b69d-11bd9ac0455d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
